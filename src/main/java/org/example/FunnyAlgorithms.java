@@ -1,4 +1,7 @@
+package org.example;
+
 public class FunnyAlgorithms {
+	public FunnyAlgorithms() {}
 
 	/**
 	 * Binary Search è un algoritmo di ricerca per trovare la posizione di un
@@ -67,8 +70,12 @@ public class FunnyAlgorithms {
 	 * @return
 	 * @throws UnsupportedOperationException
 	 */
-	public int stringToIntConverter(String number) throws UnsupportedOperationException {
-		throw new UnsupportedOperationException("To be implemented");
+	public int stringToIntConverter(String number) throws NumberFormatException {
+		int i;
+		if(Integer.valueOf(number) >32767 || Integer.valueOf(number) < -32768)
+			throw  new NumberFormatException();
+		else
+			i = Integer.parseInt(number);
+			return i;
 	}
-
 }
